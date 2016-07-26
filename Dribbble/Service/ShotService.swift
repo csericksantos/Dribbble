@@ -11,7 +11,7 @@ import Moya_ModelMapper
 
 struct ShotService: BaseService, Gettable {
     
-    let provider = MoyaProvider<BaseAPI>()
+    private let provider: MoyaProvider<BaseAPI> = MoyaProvider<BaseAPI>()
     
     func get(completion: Result<[Shot], Errors> -> Void) {
         

@@ -30,6 +30,7 @@
 		43BEAC041D467BDC0009E832 /* ShotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEAC031D467BDC0009E832 /* ShotPresenter.swift */; };
 		43BEAC061D467C680009E832 /* ShotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEAC051D467C680009E832 /* ShotsView.swift */; };
 		43BEAC091D46A8E40009E832 /* ShotViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEAC081D46A8E40009E832 /* ShotViewCell.swift */; };
+		43BEAC0B1D47DBBF0009E832 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEAC0A1D47DBBF0009E832 /* UIImage.swift */; };
 		B4354206320E335ABD39EC60 /* Pods_Dribbble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267A6A1051ECE5A7BFC1F6F4 /* Pods_Dribbble.framework */; };
 		C9F4091069A04F0C02CEA532 /* Pods_DribbbleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429956A0FE4602E4C7FE6742 /* Pods_DribbbleUITests.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		43BEAC031D467BDC0009E832 /* ShotPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotPresenter.swift; sourceTree = "<group>"; };
 		43BEAC051D467C680009E832 /* ShotsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotsView.swift; sourceTree = "<group>"; };
 		43BEAC081D46A8E40009E832 /* ShotViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotViewCell.swift; sourceTree = "<group>"; };
+		43BEAC0A1D47DBBF0009E832 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		619B244A26FDC43FEFB8E188 /* Pods-DribbbleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleTests/Pods-DribbbleTests.release.xcconfig"; sourceTree = "<group>"; };
 		7FE8AAA7CF0C6454BDB50E8C /* Pods-DribbbleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleUITests/Pods-DribbbleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8E43C146A349C5E599F4086D /* Pods-Dribbble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble/Pods-Dribbble.debug.xcconfig"; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				43BEABF11D40F4AA0009E832 /* EnvironmentUtil.swift */,
+				43BEAC0A1D47DBBF0009E832 /* UIImage.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				43BEABFF1D4112B80009E832 /* Images.swift in Sources */,
 				43BEABFD1D4111BD0009E832 /* Shot.swift in Sources */,
 				43BEABFB1D41119A0009E832 /* ShotsViewController.swift in Sources */,
+				43BEAC0B1D47DBBF0009E832 /* UIImage.swift in Sources */,
 				43BEABEA1D3FD0E80009E832 /* BaseAPI.swift in Sources */,
 				43BEABF21D40F4AA0009E832 /* EnvironmentUtil.swift in Sources */,
 				43BEAC011D4114A50009E832 /* User.swift in Sources */,
@@ -722,7 +726,7 @@
 			buildSettings = {
 				ACCESS_TOKEN = f4cb69f89faf10f3a3138f348a171819c5e9223d135580e9a12644de79af53af;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BASE_URL = "https://dribbble.com";
+				BASE_URL = "https://api.dribbble.com/v1";
 				INFOPLIST_FILE = Dribbble/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vicente.erick.Dribbble;
@@ -736,7 +740,7 @@
 			buildSettings = {
 				ACCESS_TOKEN = f4cb69f89faf10f3a3138f348a171819c5e9223d135580e9a12644de79af53af;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BASE_URL = "https://dribbble.com";
+				BASE_URL = "https://api.dribbble.com/v1";
 				INFOPLIST_FILE = Dribbble/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vicente.erick.Dribbble;

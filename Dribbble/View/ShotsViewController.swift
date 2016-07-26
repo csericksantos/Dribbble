@@ -11,28 +11,29 @@ import PKHUD
 
 class ShotsViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView?
+    @IBOutlet weak var collectionView: UICollectionView?
     
-    private let productService = ShotService()
-    private let productPresenter = ShotPresenter()
+    private let shotService = ShotService()
+    private let shotPresenter = ShotPresenter()
     private var dataSource = [Shot]() {
         didSet {
-            if let tblView = tableView {
-                tblView.reloadData()
+            if let collectionView = collectionView {
+                collectionView.reloadData()
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        shotPresenter.setView(self)
+        getShots(fromService: shotService)
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func getShots<Service: Gettable where Service.DataArray == [Shot]>(fromService service: Service) {
+        shotPresenter.getShots(fromService: service)
     }
-
 
 }
 
@@ -53,12 +54,12 @@ extension ShotsViewController: ShotsView {
     }
     
     func setShots(shots: [Shot]) {
-        tableView?.hidden = false
+        collectionView?.hidden = false
         dataSource = shots
     }
     
     func showEmptyView() {
-        tableView?.hidden = true
+        collectionView?.hidden = true
     }
     
 }
@@ -72,7 +73,7 @@ extension ShotsViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: ShotViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(ShotViewCell.identifier(), forIndexPath: indexPath) as! ShotViewCell
         
-        cell.product = dataSource[indexPath.row]
+        cell.shot = dataSource[indexPath.row]
         
         return cell
     }

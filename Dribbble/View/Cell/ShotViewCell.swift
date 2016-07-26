@@ -10,29 +10,33 @@ import UIKit
 
 class ShotViewCell: UICollectionViewCell {
 
-    @IBOutlet var backView: UIView?
-    @IBOutlet var shotImage: UIImageView?
-    @IBOutlet var shotNameLabel: UILabel?
-    @IBOutlet var shotPriceLabel: UILabel?
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var projectImage: UIImageView!
+    @IBOutlet weak var viewsLabel: UILabel!
+    @IBOutlet weak var commentsLabel: UILabel!
+    @IBOutlet weak var heartsLabel: UILabel!
     
-    var product: Shot? {
+    var shot: Shot? {
         didSet {
             
-            if let product = product,
-                let photos = product.photos,
-                let imageURL = photos.thumbnailHD {
-                productImage?.downloadImage(URL: imageURL.secureURL)
+            guard let shot = shot else {
+                return;
             }
             
-            productNameLabel?.text = product?.title
-            productPriceLabel?.text = product?.currencyPrice()
-            productDateLabel?.text = product?.stringDate()
+            userImage.downloadImage(URL: shot.user?.avatar)
+            userNameLabel.text = shot.user?.name
+            
+            projectImage.downloadImage(URL: shot.images?.normal)
+            viewsLabel.text = String(shot.view!)
+            commentsLabel.text = String(shot.comment!)
+            heartsLabel.text = String(shot.like!)
             
         }
     }
     
     static func identifier() -> String {
-        return String(ProductViewCell)
+        return String(ShotViewCell)
     }
     
 }

@@ -23,10 +23,10 @@ extension BaseAPI: TargetType {
         case .shots(let id):
             
             guard let id = id else {
-                return "/shots?access_token=\(EnvironmentUtil.accessToken)"
+                return "/shots"
             }
             
-            return "/shots/\(id)?access_token=\(EnvironmentUtil.accessToken)"
+            return "/shots/\(id)"
         }
     }
     
@@ -35,7 +35,7 @@ extension BaseAPI: TargetType {
     }
     
     public var parameters: [String : AnyObject]? {
-        return nil
+        return ["access_token":(EnvironmentUtil.accessToken)]
     }
     
     public var sampleData: NSData {
@@ -58,5 +58,6 @@ extension BaseAPI: TargetType {
         
         return NSData()
     }
+    
 }
 
