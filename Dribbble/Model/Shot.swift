@@ -20,6 +20,19 @@ struct Shot: Mappable {
     let comment: Int?
     let user: User?
     
+    init(id: Int?, title: String?, description: String?, images:Images?, view: Int?, like: Int?, comment: Int?, user: User?) {
+        
+        self.id = id
+        self.title = title
+        self.description = description
+        self.images = images
+        self.view = view
+        self.like = like
+        self.comment = comment
+        self.user = user
+        
+    }
+    
     init(map: Mapper) throws {
         id = map.optionalFrom("id")
         title = map.optionalFrom("title")

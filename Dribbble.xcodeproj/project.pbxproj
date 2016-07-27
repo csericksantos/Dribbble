@@ -31,6 +31,11 @@
 		43BEAC061D467C680009E832 /* ShotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEAC051D467C680009E832 /* ShotsView.swift */; };
 		43BEAC091D46A8E40009E832 /* ShotViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEAC081D46A8E40009E832 /* ShotViewCell.swift */; };
 		43BEAC0B1D47DBBF0009E832 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEAC0A1D47DBBF0009E832 /* UIImage.swift */; };
+		43BEAC131D48FB0F0009E832 /* ShotPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEAC121D48FB0F0009E832 /* ShotPresenterTest.swift */; };
+		43BEAC151D48FB870009E832 /* ShotServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEAC141D48FB870009E832 /* ShotServiceMock.swift */; };
+		43BEAC171D48FD6A0009E832 /* ShotViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEAC161D48FD6A0009E832 /* ShotViewMock.swift */; };
+		43BEAC1D1D490B040009E832 /* ShotsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEAC1C1D490B040009E832 /* ShotsViewControllerTest.swift */; };
+		43BEAC201D490C9E0009E832 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEAC1F1D490C9E0009E832 /* UIViewController.swift */; };
 		B4354206320E335ABD39EC60 /* Pods_Dribbble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267A6A1051ECE5A7BFC1F6F4 /* Pods_Dribbble.framework */; };
 		C9F4091069A04F0C02CEA532 /* Pods_DribbbleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429956A0FE4602E4C7FE6742 /* Pods_DribbbleUITests.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +90,11 @@
 		43BEAC051D467C680009E832 /* ShotsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotsView.swift; sourceTree = "<group>"; };
 		43BEAC081D46A8E40009E832 /* ShotViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotViewCell.swift; sourceTree = "<group>"; };
 		43BEAC0A1D47DBBF0009E832 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		43BEAC121D48FB0F0009E832 /* ShotPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotPresenterTest.swift; sourceTree = "<group>"; };
+		43BEAC141D48FB870009E832 /* ShotServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotServiceMock.swift; sourceTree = "<group>"; };
+		43BEAC161D48FD6A0009E832 /* ShotViewMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotViewMock.swift; sourceTree = "<group>"; };
+		43BEAC1C1D490B040009E832 /* ShotsViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotsViewControllerTest.swift; sourceTree = "<group>"; };
+		43BEAC1F1D490C9E0009E832 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		619B244A26FDC43FEFB8E188 /* Pods-DribbbleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleTests/Pods-DribbbleTests.release.xcconfig"; sourceTree = "<group>"; };
 		7FE8AAA7CF0C6454BDB50E8C /* Pods-DribbbleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleUITests/Pods-DribbbleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8E43C146A349C5E599F4086D /* Pods-Dribbble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble/Pods-Dribbble.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,7 +194,9 @@
 		43BEABB21D3FC2070009E832 /* DribbbleTests */ = {
 			isa = PBXGroup;
 			children = (
-				43BEABB31D3FC2070009E832 /* ShotServiceTests.swift */,
+				43BEAC101D48FABB0009E832 /* Presenter */,
+				43BEAC0F1D48FA700009E832 /* View */,
+				43BEAC0E1D48FA460009E832 /* Service */,
 				43BEABB51D3FC2070009E832 /* Info.plist */,
 			);
 			path = DribbbleTests;
@@ -299,6 +311,49 @@
 				43BEAC081D46A8E40009E832 /* ShotViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		43BEAC0E1D48FA460009E832 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				43BEABB31D3FC2070009E832 /* ShotServiceTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		43BEAC0F1D48FA700009E832 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43BEAC1E1D490C530009E832 /* Util */,
+				43BEAC1C1D490B040009E832 /* ShotsViewControllerTest.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		43BEAC101D48FABB0009E832 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				43BEAC111D48FAE60009E832 /* Util */,
+				43BEAC121D48FB0F0009E832 /* ShotPresenterTest.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		43BEAC111D48FAE60009E832 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				43BEAC141D48FB870009E832 /* ShotServiceMock.swift */,
+				43BEAC161D48FD6A0009E832 /* ShotViewMock.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		43BEAC1E1D490C530009E832 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				43BEAC1F1D490C9E0009E832 /* UIViewController.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -588,6 +643,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43BEAC171D48FD6A0009E832 /* ShotViewMock.swift in Sources */,
+				43BEAC151D48FB870009E832 /* ShotServiceMock.swift in Sources */,
+				43BEAC201D490C9E0009E832 /* UIViewController.swift in Sources */,
+				43BEAC131D48FB0F0009E832 /* ShotPresenterTest.swift in Sources */,
+				43BEAC1D1D490B040009E832 /* ShotsViewControllerTest.swift in Sources */,
 				43BEABB41D3FC2070009E832 /* ShotServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

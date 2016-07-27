@@ -15,6 +15,15 @@ struct Images: Mappable {
     let normal: NSURL?
     let teaser: NSURL?
     
+    
+    init(high: NSURL?, normal: NSURL?, teaser: NSURL?) {
+        
+        self.high = high
+        self.normal = normal
+        self.teaser = teaser
+        
+    }
+    
     init(map: Mapper) throws {
         high = map.optionalFrom("hidpi")
         normal = map.optionalFrom("normal")

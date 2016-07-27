@@ -16,6 +16,15 @@ struct User: Mappable {
     let avatar: NSURL?
     let location: String?
     
+    init (id: Int?, name: String?, avatar: NSURL?, location: String?) {
+        
+        self.id = id
+        self.name = name
+        self.avatar = avatar
+        self.location = location
+        
+    }
+    
     init(map: Mapper) throws {
         id = map.optionalFrom("id")
         name = map.optionalFrom("name")
