@@ -1,2 +1,2 @@
 # Dribbble
-Best Praticles
+Best Practices
